@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动条</title>
+    <script src="js/jquery-2.0.0.min.js"></script>
+    <script>
+        $(function () {
+            $('.point').on('mousedown', function () {
+                $('html').on('mousemove', function (ev) {
+                    var Event = ev || event;
+                    var $arrive = $('.arrive');
+                    var $tot = $('.tot');
+                    //console.log((Event.clientX - $arrive.offset().left) / 10);
+                    $arrive.css('width', Math.min(Math.round((Event.clientX - $arrive.offset().left) / parseInt($tot.css('width')) * 100), 100) + '%');
+                });
+                $('html').on('mouseup', function () {
+                    $('html').off('mousemove');
+                    $('html').off('mouseup');
+                });
+                return false;
+            });
+            function getKey() {
+
+            }
+        });
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        .tot {
+            margin-top: 100px;
+            margin-left: 50px;
+            width: 200px;
+            height: 20px;
+
+        }
+
+        .out {
+            margin: auto auto;
+            height: 100%;
+            /* 设置外侧滚动条宽度 */
+            width: 100%;
+            background-color: rgb(166, 158, 152);
+        }
+
+        .fn,
+        .be {
+            color: transparent;
+        }
+
+        .arrive {
+            position: relative;
+            width: 23%;
+            height: 100%;
+            background-color: rgb(146, 30, 30);
+            /* rgb(228, 225, 224); */
+        }
+
+        .point {
+
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            right: -5px;
+            /* top: -4px; */
+            width: 5px;
+            height: 100%;
+            /* border-radius: 5px; */
+
+        }
+
+        .fake {
+            width: 500px !important;
+        }
+
+        .mid {
+            /* margin-top: 500px; */
+            margin-left: 500px;
+        }
+    </style>
+</head>
+
+<div class="tot fake">
+    <div class="out">
+        <div class="arrive" style="width: 24%;">
+            <b class="point"></b>
+        </div>
+    </div>
+
+</div>
+<div class="mid">
+    <span>剩余容量</span><span>0.66G</span>/<span>1G</span>
+</div>
+<form action="">
+
+    <input type="file" class="tot" multiple="multiple">
+    <input type="button" value="测试" id="cs">
+</form>
+<script>
+    function getFileSize(obj) {
+        var fileSize = 0;
+        var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+        if (isIE && !obj.files) {
+            var filePath = obj.value;
+            var fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+            var file = fileSystem.GetFile(filePath);
+            fileSize = file.Size;
+        } else {
+            fileSize = obj.files[0].size;
+        }
+        fileSize = Math.round(fileSize / 1024); //单位为KB
+        return fileSize;
+    }
+
+    var cs = document.getElementById('cs');
+    cs.onclick = function () {
+        console.log("文件大小是" + getFileSize(cs));
+    }
+
+
+</script>
+<a href="../dsadsa">dsadsad</a>
+
+<body>
+
+</body>
+
+</html>
