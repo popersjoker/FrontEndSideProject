@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Êñ∞Êµ™Âæ?Âç?</title>
+    <script src="jq-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var $input = $("textarea");
+            var $but = $("button");
+            var $ping = $(".ping");
+            $but.hover(function () {
+                if ($input.val().search(/[\S]/) != -1)
+                    $(this).css("backgroundColor", "orange");
+            }, function () { $(this).css("backgroundColor", "rgb(255, 192, 159)"); });
+            $but.on("click", function () {
+                var content = $input.val(); //console.log(content + " " + content.search(/[\S]/) + "::::");
+                if (content.search(/[\S]/) == -1) {
+                    return false;
+                }
+                else {
+                    $input.val("");
+                    $ping.prepend('<li class="who"><div class="name"><img src="pt/wl.png" alt=""> \<div class="de"> <h5>Name</h5><span>3ÂàÜÈíüÂâ? Êù•Ëá™ Âæ?Âç? weibo.com Â∑≤ÁºñËæ?<span> </div></div> <p class="ios">' + content + '</p><hr> <p class="bot"><span class="del">Âà†Èô§</span><span>ËΩ?Âè?</span><span class="zan">ÁÇπËµû</span><span>ËØÑË??</span></p > </li > ');
+                }
+            });
+            $ping.delegate('.del', 'click', function () {
+                $(this).parents('.who').remove();
+            });
+            $ping.delegate('.zan', 'click', function () {
+                var t = $(this).html().match(/(?<=ÁÇπËµû)[\d]+/); console.log(t);
+                t = !t ? 0 : t;
+                t = parseInt(t) + 1;
+
+                $(this).html('ÁÇπËµû' + t);
+            })
+
+        });
+    </script>
+    <style>
+        body {
+            position: relative;
+            background-image: url("pt/ww.jpg");
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            margin: auto 15%;
+        }
+
+        .left,
+        .mid,
+        .right {
+            display: inline-block;
+            /* float: left; */
+            vertical-align: top;
+        }
+
+        .mid {
+            position: relative;
+            left: 167px;
+            margin-right: 10px;
+        }
+
+        .left img {
+            width: 150px;
+        }
+
+        .mid img {
+            width: 600px;
+        }
+
+        .right img {
+            width: 230px;
+        }
+
+        .ping li {
+            border: 1px solid b#f5f5f5f5;
+            margin-top: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+
+        }
+
+        .right {
+            right: 250px;
+        }
+
+        .name img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .de {
+            top: 5px;
+            position: relative;
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .de span {
+
+            color: rgb(128, 128, 128);
+            font-size: 12px;
+        }
+
+        .name {
+            position: relative;
+
+            padding: 20px 0px 0px 20px;
+        }
+
+        .ios {
+            position: relative;
+            left: 90px;
+            font-size: 15px;
+            line-height: 15px;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            background-color: #f5f5f5f5;
+            height: 1px;
+            border: none;
+        }
+
+        .input {
+            background: url("pt/w3.png");
+            background-size: 600px 200px;
+            width: 600px;
+            position: relative;
+            height: 200px;
+        }
+
+
+
+        .input textarea {
+            position: absolute;
+            left: 11px;
+            top: 32px;
+            width: 578px;
+            height: 61px;
+        }
+
+        .left,
+        .right {
+            position: fixed;
+
+        }
+
+        .input button {
+            position: absolute;
+            /* left: 11px; */
+            /* top: 32px; */
+            bottom: 77px;
+            right: 9px;
+            width: 83px;
+            height: 24px;
+            border: none;
+            font-weight: 12;
+            color: #fff;
+            /* max-width: 41em; */
+            background-color: rgb(255, 192, 159);
+        }
+
+        .bot span {
+            height: 30px;
+            display: inline-block;
+            padding-top: 10px;
+            color: rgb(206, 162, 128);
+            width: 24.8%;
+            font-size: 12px;
+            border-right: 1px solid #f5f5f5f5;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <img src="pt/w2.png" alt="">
+        </div>
+        <div class="mid">
+            <div class="input">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                <button>ÂèëÂ∏É</button>
+            </div>
+            <ul class="ping">
+                <li class="who">
+                    <div class="name">
+                        <img src="pt/wl.png" alt="">
+                        <div class="de">
+                            <h5>Name</h5><span>3ÂàÜÈíüÂâ? Êù•Ëá™ Âæ?Âç? weibo.com Â∑≤ÁºñËæ?<span>
+                        </div>
+                    </div>
+                    <p class="ios">
+                        xsdsd
+                    </p>
+                    <hr>
+                    <p class="bot"><span class="del">Âà†Èô§</span><span>ËΩ?Âè?</span><span
+                            class="zan">ÁÇπËµû</span><span>ËØÑË??</span>
+                    </p>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+        <div class="right"><img src="pt/w4.png" alt=""></div>
+    </div>
+</body>
+
+</html>

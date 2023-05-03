@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-1.12.4.js"></script>
+    <script>
+        $(function () {
+            console.log("??");
+            $(".ranking li").hover(function () {
+                $(this).addClass('ko');
+            }, function () {
+
+                $(this).removeClass('ko');
+
+            });
+
+
+        });
+    </script>
+    <style>
+        .ranking {
+            width: 150px;
+            height: 1000px;
+            color: #f5f5f5f5;
+            margin: auto auto;
+            border: 1px black solid;
+            position: relative;
+        }
+
+        .ranking h2 {
+            font-size: 20px;
+            color: red;
+        }
+
+        .ranking ul {
+            padding: 0;
+            margin: 0;
+            /* font-size: 0; */
+        }
+
+        .ranking li {
+            left: 0;
+
+            list-style: none;
+            /* width: 150px; */
+            /* height: 70px; */
+        }
+
+        .ranking li h3 {
+            text-align: left;
+            font-size: 15px;
+            color: orange;
+        }
+
+        .ranking div img {
+            display: inline-block;
+            width: 100px;
+            vertical-align: top;
+            height: 50px;
+        }
+
+        .ranking li div div {
+            /* width: 50px; */
+            /* height: 50px; */
+            color: black;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .de {
+
+            display: none;
+            width: 150px;
+            height: 71px;
+        }
+
+        .ko .de {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ranking">
+        <h2>电影排行榜</h2>
+        <ul>
+            <li>
+
+                <h3>1</h3>
+                <div class="de">
+                    <img src="pt/df.jpg" alt="">
+                    <div>详细介绍</div>
+                </div>
+                <hr>
+
+
+            </li>
+            <li>
+
+                <h3>2</h3>
+                <div class="de">
+                    <img src="pt/df.jpg" alt="">
+                    <div>详细介绍</div>
+                </div>
+                <hr>
+
+
+            </li>
+            <li>
+
+                <h3>3</h3>
+                <div class="de">
+                    <img src="pt/df.jpg" alt="">
+                    <div>详细介绍</div>
+                </div>
+                <hr>
+
+
+            </li>
+            <li>
+
+                <h3>4</h3>
+                <div class="de">
+                    <img src="pt/df.jpg" alt="">
+                    <div>详细介绍</div>
+                </div>
+                <hr>
+
+            </li>
+            <li>
+
+                <h3>5</h3>
+                <div class="de">
+                    <img src="pt/df.jpg
+                    " alt="">
+                    <div>详细介绍</div>
+                </div>
+                <hr>
+
+            </li>
+            <li>
+                <hr>
+                <h3></h3>
+                <div>
+                    <img src="" alt="">
+                    <div></div>
+                </div>
+
+
+            </li>
+            <li>
+                <h3></h3>
+                <div>
+                    <img src="" alt="">
+                    <div></div>
+                </div>
+
+
+            </li>
+            <li>
+                <h3></h3>
+                <div>
+                    <img src="" alt="">
+                    <div></div>
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+</body>
+
+</html>

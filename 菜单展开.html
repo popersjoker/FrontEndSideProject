@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单</title>
+    <script src="jq-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $(".fr").children("li").on("click", function () {
+                console.log(":::");
+                $(this).children(".sub").stop(true, true).slideDown();
+                $(this).addClass('rot');
+                $(this).siblings().removeClass('rot');
+                $(this).siblings().stop(true, true).children(".sub").slideUp();
+
+            });
+
+        });
+
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .fr {
+            position: relative;
+            margin: 200px 500px;
+        }
+
+        .fr li:last-child {
+            border-bottom: 1px solid black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .fr li {
+            text-indent: 2em;
+            font-size: 14px;
+            line-height: 50px;
+            width: 200px;
+            border: 1px solid black;
+            border-bottom: none;
+            position: relative;
+
+        }
+
+        .io {
+            width: 50px;
+            height: 50px;
+            right: 0;
+            filter: 0.5;
+            background-color: black;
+            background: url("pt/io.png") no-repeat center center;
+            background-size: 25px 25px;
+            position: absolute;
+        }
+
+        .sub {
+            display: none;
+        }
+
+        .sub li {
+            background-color: blueviolet;
+
+        }
+
+        .sub li:last-child {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .sub li:hover {
+            background-color: cornflowerblue;
+        }
+
+        .rot .io {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="fr">
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单 <span class="io"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
