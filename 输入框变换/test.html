@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+        }
+
+
+
+        .w .c {
+            width: 10px;
+            float: right;
+        }
+
+        .s {
+            display: inline-block;
+            width: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="tel" name="" id="" value="测试" class="test" style="background-color: red;">
+    <script>
+        var k = document.getElementsByClassName('test');
+        k[0].onclick = function () {
+            k[0].value = 'make it';
+            k[0].style.color = 'yellow';
+            console.log('生效');
+        }
+    </script>
+</body>
+
+</html>

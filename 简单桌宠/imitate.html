@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imitate</title>
+    <style>
+        img {
+            position: absolute;
+            top: 50px;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        p {
+            display: none;
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            background-color: black;
+            border: brown;
+            border-radius: 5px;
+            color: red;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <p>这是一个对话框</p>
+    <img src="spig.gif" />
+    <script>
+        var choose = [100, 200, 300, 400, 500, 600, 700, 800];
+        var times = 0;
+        var talk = ['别点我', '停下啊', '你在干什么', '住手', '救命，这里游流氓', '1', '不要啊'];
+        var img = document.querySelector('img');
+        var p = document.querySelector('p');
+        document.addEventListener('click', function () {
+            // console.log(e);
+            p.style.display = 'inline-block';
+            times++;
+            if (times % 10 == 0) {
+                p.innerText = '不要点了';
+                img.style.top = '500px';
+                p.style.top = '450px';
+                return false;
+            }
+            var t = Math.floor(Math.random() * choose.length);
+            img.style.left = choose[t] + 'px';
+            var k = Math.floor(Math.random() * talk.length);
+
+            p.style.left = choose[t] + 'px';
+
+            // console.log(k);
+            if (k == 5) {
+                talk[k] = '这是第' + times + '次了';
+            }
+            p.innerText = talk[k];
+            // console.log(t);
+        })
+        document.addEventListener('scroll', function (e) {
+            //console.log(e);
+            img
+
+        })
+    </script>
+</body>
+
+</html>

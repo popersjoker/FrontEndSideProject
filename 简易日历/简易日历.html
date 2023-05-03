@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="li.css">
+    <script>
+        /*
+        定时器
+        var c=setInterval(fuc,time);
+        setTimeout(fuc,time);只执行一次
+        clearInserval(c)
+        clearTimeout(C)
+        获取日期
+        var oda=new Date();
+        .getHours();
+        .getMinute();
+        .getSeconds();
+        .getfullyear();
+        .getMonth()+1;
+        .getDate();
+        .getDay()+7
+        延时提示框
+
+
+        
+        
+        
+        
+        */
+        var arr = [
+            'sadfsafsfa',
+            'safasffasd',
+            'fsafdasfdf',
+            'fasdasfadsf',
+            'sadfsafsfa',
+            'safasffasd',
+            'fsafdasfdf',
+            'fasdasfadsf',
+            'sadfsafsfa',
+            'safasffasd',
+            'fsafdasfdf',
+            'fasdasfadsf'
+        ];
+        window.onload = function () {
+
+            var dv = document.getElementById('ll');
+            //console.log(dv);
+            var hs = dv.getElementsByTagName('h2');
+            var h3 = dv.getElementsByTagName('h3')[0];
+            console.log(h3);
+            for (var i = 0; i < hs.length; i++) {
+                hs[i].index = i;
+                // console.log(hs[i].index);
+                hs[i].onmouseover = function () {
+                    for (var j = 0; j < hs.length; j++) {
+                        hs[j].className = '';
+                    }
+                    this.className = 'yellow';
+                    h3.innerHTML = '<h4>这到了' + (this.index + 1) + '月，出去玩吧</h2>' + arr[this.index];
+
+                };
+            }
+
+        }
+    </script>
+</head>
+<div id="ll">
+    <div class="blo">
+        <h2>1月 <br><span>MR WANG</span></h2>
+        <h2>2月 <br><span>MR WANG</span></h2>
+        <h2>3月 <br><span>MR WANG</span></h2>
+        <h2>4月 <br><span>MR WANG</span></h2>
+        <h2>5月 <br><span>MR WANG</span></h2>
+        <h2>6月 <br><span>MR WANG</span></h2>
+        <h2>7月 <br><span>MR WANG</span></h2>
+        <h2>8月 <br><span>MR WANG</span></h2>
+        <h2>9月 <br><span>MR WANG</span></h2>
+        <h2>10月<br><span>MR WANG</span></h2>
+        <h2>11月<br><span>MR WANG</span></h2>
+        <h2>12月<br><span>MR WANG</span></h2>
+    </div>
+    <h3>
+    </h3>
+</div>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sad {
+            width: 250px;
+            height: 150px;
+            position: relative;
+            background-color: red;
+            left: 0px;
+            top: 0px;
+
+        }
+
+        body {
+            position: relative;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            position: relative;
+            display: block;
+            width: 1000px;
+            height: 150px;
+            left: 0px;
+            top: 0px;
+            background-color: blue;
+        }
+
+        ul li {
+            /* position: absolute; */
+            width: 250x;
+            height: 150px;
+            list-style: none;
+            float: left;
+        }
+
+        .clear {
+            clear: left
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var speed = 5;
+            var left = document.getElementsByClassName('left')[0];
+            var ul = document.getElementsByTagName('ul')[0];
+            var right = document.getElementsByClassName('right')[0];
+            var li = ul.getElementsByTagName('li')[0];
+            ul.style.width = ul.offsetWidth * 2 + 'px';
+            ul.innerHTML = ul.innerHTML + ul.innerHTML;
+            left.onclick = function () {//函数左边没有()
+                speed = -5;
+            }
+            right.onclick = function () {
+                speed = 5;
+            }
+            function Move() {
+                ul.style.left = (ul.offsetLeft + speed) + 'px'; if (ul.offsetLeft < -ul.offsetWidth / 2.0) ul.style.left = 0;
+                else if (ul.offsetLeft > 0) ul.style.left = '-1000px';
+            }
+            var timer;
+            ul.onmouseover = function () {
+                clearInterval(timer);
+            }
+            ul.onmouseout = function () {
+                timer = setInterval(Move, 30);
+            }
+            timer = setInterval(Move, 30);//注意函数不能加()
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div class="sad"></div> -->
+    <div style="height: 150px; width:1000px;position: relative;float: left;background-color: blue;overflow: hidden;">
+        <ul>
+            <li><img src="C:\Users\lenovo\Desktop\图片集中营\新营\0.jpg" alt="" class="sad"></li>
+            <li><img src="C:\Users\lenovo\Desktop\图片集中营\新营\1.jpg" alt="" class="sad"></li>
+            <li><img src="C:\Users\lenovo\Desktop\图片集中营\新营\2.jpg" alt="" class="sad"></li>
+            <li><img src="C:\Users\lenovo\Desktop\图片集中营\新营\3.jpg" alt="" class="sad"></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <input type="button" value="left" class="left"> <input type="button" value="Right" class="right">
+</body>
+
+</html>

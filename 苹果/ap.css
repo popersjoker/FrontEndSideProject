@@ -1,0 +1,414 @@
+.head {
+    height: 30px;
+    background-color: #333333;
+    position: relative;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.hword {
+    display: block;
+    position: relative;
+    left: 1200px;
+    color: #CCCCCC;
+}
+
+.head2 {
+    height: 40px;
+    display: block;
+    background-color: #000;
+    color: #CCCCCC;
+    list-style: none;
+    font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.head2 ul {
+    margin-left: 250px;
+}
+
+.head2 ul li {
+    height: 16px;
+    display: inline-table;
+    margin-top: 10px;
+    margin-right: 80px;
+}
+
+.l0 {
+    background-size: 16px 44px;
+    background-image: url(ap.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.l7 {
+    background-image: url(search.svg);
+    background-size: 30px 87px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position-y: -11px;
+}
+
+.remove {
+    position: relative;
+    right: 10000px;
+}
+
+.mage {
+    display: inline-block;
+    height: 30px;
+}
+
+.l8 {
+    background-image: url(shop.svg);
+    background-size: 30px 40px;
+    background-repeat: no-repeat;
+    background-position: center -10px;
+}
+
+.white {
+    position: relative;
+    height: 30px;
+    padding-top: 10px;
+    color: black;
+    border-bottom: solid black 1px;
+}
+
+.wword {
+    display: inline-block;
+    position: absolute;
+    margin-left: 37%;
+    font-size: 12px;
+}
+
+.abody {
+    width: 1479.2px;
+    height: 572.4px;
+    background-color: black;
+    position: relative;
+}
+
+.box {
+    padding-bottom: 300px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    height: 182px;
+    color: #fff;
+    font-size: 18;
+    font-weight: 400;
+}
+
+.app {
+    height: 64px;
+    background-image: url(app.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.health {
+    /* letter-spacing: 10px; */
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.case {
+    position: absolute;
+    /* float: left; */
+    height: 468px;
+    text-align: left;
+    margin-left: 180px;
+}
+
+.buy {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.buy a {
+    margin-right: 30px;
+    color: rgb(41, 151, 255);
+}
+
+.img {
+    height: 418px;
+    /* width: 157px; */
+    background-image: url(watch.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.abody2 {
+    height: 615px;
+    text-align: center;
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+}
+
+.body4 .dates {
+    width: 40%;
+    height: 40%;
+}
+
+.box2 {
+    margin-top: 100px;
+    height: 195px;
+}
+
+.sp {
+    font-size: 8px;
+    color: red;
+}
+
+.air {
+    font-size: 55px;
+    font-weight: 800;
+    color: #000;
+}
+
+.hero {
+    height: 500px;
+    background-image: url(hreo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.body3 {
+    height: 672px;
+    text-align: center;
+    position: relative;
+}
+
+.case h1 {
+    width: 100px !important;
+    color: rgb(29, 29, 31) !important;
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 0 !important;
+    font-size: 10px !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.case div {
+    margin-right: 70px;
+    display: inline-block;
+    width: 136px;
+    vertical-align: top;
+}
+
+.case div a {
+    color: rgb(113, 81, 120);
+    font-size: 10px;
+    display: block;
+    padding-top: 10px;
+}
+
+.image {
+    overflow: hidden;
+}
+
+.im {
+    height: 64px;
+    background-image: url(se.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img2 {
+    height: 400px;
+    background-image: url(sss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dates {
+    overflow: hidden;
+    margin-right: 3px;
+    text-align: center;
+    position: relative;
+    padding-left: 100px;
+    /* display: inline-block; */
+    height: 600.6px;
+    width: 636px;
+    float: left;
+    background-size: 733.6px 636px;
+    margin-top: 2px;
+}
+
+.date1 {
+    background-image: url(l1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+.date2 {
+    background-image: url(l2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+.date3 {
+    background-image: url(l3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    background-position-y: 25px;
+}
+
+.date4 {
+    background-position-x: -303px;
+    background-image: url(l4.jpg);
+    background-repeat: no-repeat;
+    /* background-position-y: 100px; */
+    background-size: auto 657px;
+}
+
+.date5 {
+    background-image: url(l5.jpg);
+    background-color: rgb(241, 241, 243);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+    background-position-y: 235px;
+}
+
+.date6 {
+    background-image: url(l6.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: auto 737px;
+    background-size: 1400px 600px;
+}
+
+.i1 {
+    height: 100px;
+    background-image: url(ipad.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.date1 .word {
+    position: relative;
+    top: 400px;
+}
+
+.date2 .word {
+    position: relative;
+    top: 100px;
+    right: 43px;
+}
+
+.date4 .word {
+    position: relative;
+    top: 83px;
+}
+
+.date3 .word, .date6 .word {
+    position: relative;
+    top: 355px;
+}
+
+.date5 .word {
+    position: relative;
+    top: 52px;
+}
+
+.word h1 {
+    font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    /* background-color: red; */
+}
+
+.buy {
+    right: -10px;
+    position: relative;
+}
+
+.date6 h1 {
+    background-image: url(music.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+}
+
+.date6 .buy a {
+    color: #fff;
+    font-size: 14px;
+}
+
+.body4 {
+    margin-bottom: 20px;
+    height: 1800px
+}
+
+.body5 {
+    background-color: rgb(241, 241, 243);
+    height: 554px;
+    padding-left: 75px;
+}
+
+.body5 h1 {
+    width: 990px;
+    margin-left: 180px;
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ccc;
+    color: rgb(134, 136, 142);
+    font-size: 10px;
+    line-height: 27px;
+    font-weight: 700;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
+
+.btword {
+    text-align: center;
+}
+
+.body5 dl {
+    list-style: none;
+}
+
+.boady5 dl a {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.fix {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.body3 .buy a, .abody2 .buy a {
+    font-size: 18px;
+}
+
+.dived {
+    color: #353030;
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+        }
+
+        .er1 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -30px -40px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er2 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -100px -40px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er3 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -170px -40px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er4 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -240px -40px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er5 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -310px -40px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er6 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -30px -180px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er7 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -100px -180px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er8 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -170px -180px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er9 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -240px -180px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .er0 {
+            display: inline-block;
+            width: 70px;
+            height: 100px;
+            background-image: url(digit.jpg);
+            background-position: -310px -180px;
+            padding-bottom: -20px;
+            /* 70 140 */
+        }
+
+        .zq {
+            position: relative;
+            top: 1000px;
+            font-size: 14px;
+            line-height: 150px;
+            text-align: center;
+            font-weight: 400;
+            /* height: 100px; */
+            color: aliceblue;
+            background-color: rgb(24, 5, 24);
+        }
+
+        .word {
+            font-size: 80px;
+            line-height: 100px;
+            position: relative;
+            top: -27px;
+            font-weight: 800;
+        }
+
+        .stop {
+            display: inline-block;
+            height: 50px;
+            width: 100px;
+            margin-right: 200px;
+            background-color: gray;
+
+        }
+
+        .task {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            margin-top: 10px;
+            font-size: 20px;
+            margin-right: 20px;
+            background-image: url(task.jpg);
+            background-size: 80px 80px;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 40px;
+        }
+
+        .detail {
+            display: none;
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            font-size: 500;
+            font-size: 20px;
+        }
+    </style>
+    <script src="http://118.31.102.4:8080/mns/ajax.js"></script>
+    <script>
+        window.onload = function () {
+            var guilv = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            var bir_y = 2001; var bir_m = 7; var bir_d = 25;
+            var zq = document.getElementsByClassName('zq')[0];
+            console.log(zq);
+            var t2 = document.getElementsByClassName('time2');
+            var er = t2[0].getElementsByTagName('div');
+            var t1 = document.getElementsByClassName('time1')[0];
+            var er2 = t1.getElementsByTagName('div');
+            function judgey(year) {
+                if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0)
+                    guilv[1] = 29;
+                else guilv[1] = 28;
+            }
+            function getdays() {
+                var dat = new Date();
+                var days = 0;
+                var now_y = dat.getFullYear();
+                var now_m = dat.getMonth();
+                var now_d = dat.getDay();
+                judgey(bir_y);
+                days += guilv[bir_m] - bir_d;
+                bir_m++;
+                for (; bir_m < 12; bir_m++)
+                    days += guilv[bir_m];
+                bir_y++;
+                judgey(now_y);
+                days -= guilv[now_m] - now_d;
+                for (++now_m; now_m < 12; now_m++)
+                    days -= guilv[now_m];
+                now_y++;
+                for (; bir_y < now_y; bir_y++) {
+                    judgey(bir_y);
+                    days += 365 + guilv[1] - 28;
+                }
+                return days;
+            }
+            function getimedat(now, day) {
+                strn = "";
+                if (now > (day + 1) / 2 + 1) {
+                    return strn + "危险期";
+                }
+                else
+                    if (now < (day + 1) / 2 - 1)
+                        return strn + "高潮期";
+                    else
+                        return strn + "过渡期";
+            }
+            function getzq() {
+                var dieday = getdays();
+                var strq = "你的身体周期";
+                strq += ",体力周期" + (dieday % 23 + 1) + "处于" + getimedat(dieday % 23 + 1, 23) + ",\n";
+                strq += "情绪周期" + (dieday % 28 + 1) + "处于" + getimedat(dieday % 28 + 1, 23) + ",\n";
+                strq += "智力周期" + (dieday % 33 + 1) + "处于" + getimedat(dieday % 33 + 1, 23) + ".\n";
+                return strq;
+            }
+            zq.innerHTML = getzq();
+            function getnum(num) {
+                if (num < 10) {
+                    return '0' + num;
+                }
+                else return '' + num;
+            }
+            var timer; var str, str1;
+            function getStr() {
+                var dat = new Date();
+                str = getnum(dat.getHours()) + getnum(dat.getMinutes()) + getnum(dat.getSeconds());
+                str1 = dat.getFullYear() + getnum(dat.getMonth() + 1) + getnum(dat.getDate());
+                for (var i = 0; i < str1.length; i++)
+                    er2[i].className = 'er' + str1[i];
+                for (var i = 0; i < str.length; i++) {
+                    er[i].className = ('er' + str[i]);
+
+                }
+            }
+            var st = document.getElementsByClassName('stop');
+            timer = setInterval(getStr, 1000);
+            st[0].onclick = function () {
+                clearInterval(timer);
+            }
+            st[1].onclick = function () {
+                getStr();
+                timer = setInterval(getStr, 1000);
+            }
+            getStr();
+            var addlist = document.getElementsByClassName('tasklist')[0];
+            var add = document.getElementsByClassName('add')[0];
+            var sele = document.getElementById('sele');
+            var td = document.getElementsByClassName('td');
+            var del = document.getElementsByClassName('del');
+            console.log(addlist);
+            function delet() {
+                if (this.checked == true)
+                    addlist.removeChild(this.parentNode);
+            }
+            var addtask = document.getElementsByClassName('addtask')[0];
+            for (var i = 0; i < del.length; i++) {
+                del[i].onclick = delet;
+            }
+            addtask.onfocus = function () {
+                addtask.value = '';
+            }
+            var tms = 0;
+            function addTask() {
+                if (addtask.value == '添加任务内容')
+                    return 0;
+                var men = document.createElement('li');
+                men.className = 'td';
+                var dat = new Date();
+                men.innerHTML = (++tms) + '.' + addtask.value + '-' + dat.getFullYear() + '/' + (dat.getMonth() + 1) + '/' + dat.getDate() + '<input type="checkbox" name="" id="del">';
+                men.firstElementChild.onclick = delet;
+                if (sele.value == '1') {
+                    addlist.appendChild(men);
+                }
+                else {
+                    var lS = document.getElementsByClassName('td');
+                    if (sele.value == 2) {
+                        var t = prompt('请输入要插入的索引值');
+                        if (t - 1 > lS.length) {
+                            alert('超出列表范围');
+                            return 0;
+                        }
+                        else {
+                            addlist.insertBefore(men, lS[t - 1]);
+                        }
+                    }
+                    else {
+                        addlist.insertBefore(men, lS[0]);
+                    }
+                }
+
+            }
+            add.onclick = addTask;
+            createXHR();
+            //sendRequest(url, params, method, callback)
+            var data = null;
+            var tskl = document.getElementsByClassName('tasklist')[0];
+            function callback() {
+                if (xmlHttpRequest.readyState == 4)
+                    if (xmlHttpRequest.status == 200) {
+                        data = xmlHttpRequest.responseText;
+                        data = data.trim();
+                        console.log(data);
+                        console.log(typeof data);
+                        data = JSON.parse(data);
+                        var ih = '';
+                        for (var i = 0; i < data.length; i++) {
+                            var tsk = data[i];
+                            var checkbox = document.createElement('input');
+                            checkbox.type = 'checkbox';
+                            checkbox.id = 'del';
+                            checkbox.onclick = delet;
+                            var li = document.createElement('li');
+                            li.className = 'td';
+                            li.innerText = tsk['index'] + '.' + tsk['detail'] + '-' + tsk['date'];
+                            li.appendChild(checkbox);
+                            //ih += '<li class="td">' + tsk['index'] + '.' + tsk['detail'] + '-' + tsk['date'] + '<input type="checkbox" name="" id="del">' + '</li>';
+                            tskl.appendChild(li);
+                        }
+                        //tskl.innerHTML = ih;
+                    }
+            }
+            sendRequest('http://118.31.102.4:8080/mns/savetext.jsp', 'op=r', 'POST', callback);
+            function save() {
+                var li = document.getElementsByTagName('li');
+                var data = [];
+                for (var i = 0; i < li.length; i++) {
+                    var js = {};
+                    var text = li[i].innerText;
+                    var sp = text.split('.');
+                    js['index'] = sp[0];
+                    sp = sp[1].split('-');
+                    js['detail'] = sp[0];
+                    js['date'] = sp[1];
+                    data.push(js);
+                }
+
+                data = JSON.stringify(data);
+                data = encodeURI(encodeURI(data));
+                sendRequest('http://118.31.102.4:8080/mns/savetext.jsp', 'op=' + data, 'POST', function () {
+                    if (xmlHttpRequest.readyState == 4)
+                        if (xmlHttpRequest.status == 200) {
+                            console.log(xmlHttpRequest.responseText);
+                            window.close();
+                        }
+                });
+            }
+            document.getElementsByClassName('hd')[0].onclick = function () {
+                save();
+
+            }
+
+        }
+
+        var thisPage = false;
+        window.onbeforeunload = function checkLeave(e) {
+            var evt = e ? e : (window.event ? window.event : null);  //此方法为了在firefox中的兼容  
+            if (!thisPage) { evt.returnValue = '离开会使编写的内容丢失。'; alert("???"); }
+        }
+        function sumbit() {
+            thisPage = true;
+            document.getElementById('YourFormId').submit();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <class class="time1">
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <span class="word">时</span>
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <span class="word">分</span>
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <span class="word">秒</span>
+    </class>
+    <br>
+    <class class="time2">
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <span class="word">::</span>
+        <div class="er0"></div>
+        <div class="er0"></div>
+        <span class="word">::</span>
+        <div class="er0"></div>
+        <div class="er0"></div>
+    </class>
+    <br>
+    <input type="button" value="时间停止" class="stop">
+
+    <input type="button" value="时间继续" class="stop">
+    <input type="button" value="传输" class="stop hd">
+    <br>
+    <div class="task" style="float: left;">查看一周的任务</div>
+    <div class="detail" style="float:left">
+        <input type="text" class="addtask" value="输入任务"><input type="button" class="add" value="添加"><select name=""
+            id="sele">
+            <option value="1">插入列表后</option>
+            <option value="2">选择插入</option>
+            <option value="3">插入列表前</option>
+        </select>
+        <ul class="tasklist">
+
+        </ul>
+
+
+    </div>
+    <br>
+
+    <script>
+        var task = document.getElementsByClassName('task')[0];
+        var det = document.getElementsByClassName('detail')[0];
+        var timer;
+        task.onmouseover = function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                det.style.display = 'block';
+            }, 500);
+        }
+        task.onmouseout = function () {
+
+            timer = setTimeout(function () { det.style.display = 'none'; }, 1000);
+        }
+        det.onmouseover = function () { clearTimeout(timer); }
+        det.onmouseout = function () { timer = setTimeout(function () { det.style.display = 'none'; }, 1000); }
+
+    </script>
+    <div style="clear:left;"></div>
+    <div class="zq">
+
+    </div>
+    <p style="color: red;font-size: large;">哀莫大于心死，悲莫过于无声</p>
+    <p style="color: chartreuse;font-size: larger;">知其不可为而为之，虽千万人吾往矣</p>
+    <p style="color: rgb(51, 42, 213);font-size: larger;">要学会为自己鼓掌，因为没有人会为你鼓掌。</p>
+</body>
+
+</html>

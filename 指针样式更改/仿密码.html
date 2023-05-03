@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="height: 2000px;">
+    <img src="timg.gif" style="position: absolute;" />
+    <script>
+        var img = document.getElementsByTagName('img')[0];
+        document.onmousemove = function (ev) {
+            var Event = ev || event;
+            // alert(Event.clientX + " " + Event.clientY);
+            //Event.cancelBubble=true; 取消冒泡
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            img.style.left = Event.clientX - 180 + 'px';
+            img.style.top = scrollTop + Event.clientY - 180 + 'px';
+        }
+        document.onmousewheel = function (ev) {
+            var Event = ev || event;
+            console.log("SSSSSSSSSSS");
+            // alert(Event.clientX + " " + Event.clientY);
+            //Event.cancelBubble=true; 取消冒泡
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            img.style.left = Event.clientX - 180 + 'px';
+            img.style.top = scrollTop + Event.clientY - 180 + 'px';
+        }
+    </script>
+</body>
+
+</html>
